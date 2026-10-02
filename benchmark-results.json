@@ -1,0 +1,67 @@
+{
+  "measured_at_utc": "2026-10-01T06:29:03.955549+00:00",
+  "method": "15 raw messages; local bot emoji sanitation then PDF conversion; no Telegram API calls",
+  "theoretical_maximum_payload_chars": 61440,
+  "results": [
+    {
+      "message_payload_chars": 8000,
+      "converter_input_chars_including_separators": 7986,
+      "emoji_chars_removed_before_conversion": 42,
+      "message_count": 15,
+      "max_single_message_chars": 534,
+      "max_single_message_chars_after_emoji_removal": 534,
+      "elapsed_seconds": 0.3062,
+      "pdf_bytes": 44009,
+      "pdf_pages": 4,
+      "status": "ok"
+    },
+    {
+      "message_payload_chars": 16000,
+      "converter_input_chars_including_separators": 15939,
+      "emoji_chars_removed_before_conversion": 89,
+      "message_count": 15,
+      "max_single_message_chars": 1067,
+      "max_single_message_chars_after_emoji_removal": 1067,
+      "elapsed_seconds": 0.6253,
+      "pdf_bytes": 50159,
+      "pdf_pages": 7,
+      "status": "ok"
+    },
+    {
+      "message_payload_chars": 30000,
+      "converter_input_chars_including_separators": 29872,
+      "emoji_chars_removed_before_conversion": 156,
+      "message_count": 15,
+      "max_single_message_chars": 2000,
+      "max_single_message_chars_after_emoji_removal": 2000,
+      "elapsed_seconds": 1.1252,
+      "pdf_bytes": 58859,
+      "pdf_pages": 12,
+      "status": "ok"
+    },
+    {
+      "message_payload_chars": 45000,
+      "converter_input_chars_including_separators": 44790,
+      "emoji_chars_removed_before_conversion": 238,
+      "message_count": 15,
+      "max_single_message_chars": 3000,
+      "max_single_message_chars_after_emoji_removal": 3000,
+      "elapsed_seconds": 1.621,
+      "pdf_bytes": 68477,
+      "pdf_pages": 17,
+      "status": "ok"
+    },
+    {
+      "message_payload_chars": 61440,
+      "converter_input_chars_including_separators": 61141,
+      "emoji_chars_removed_before_conversion": 327,
+      "message_count": 15,
+      "max_single_message_chars": 4096,
+      "max_single_message_chars_after_emoji_removal": 4096,
+      "elapsed_seconds": 2.2682,
+      "pdf_bytes": 78125,
+      "pdf_pages": 23,
+      "status": "ok"
+    }
+  ]
+}

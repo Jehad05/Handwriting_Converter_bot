@@ -1,0 +1,6 @@
+python-telegram-bot[job-queue]==22.8
+reportlab==5.0.1
+arabic-reshaper==3.0.1
+python-bidi==0.6.11
+python-dotenv==1.2.4
+pypdf==6.18.1

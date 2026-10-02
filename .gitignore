@@ -1,0 +1,40 @@
+.env
+.env.*
+!.env.example
+
+# Python environments, bytecode, test and tool caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+
+# Runtime data and logs
+/data/
+*.log
+*.pid
+*.sock
+
+# SQLite databases and sidecars, including custom DB_PATH names
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*-wal
+*-shm
+*-journal
+
+# Generated or downloaded assets
+*.pdf
+fonts/*.ttf
+fonts/*.part
+
+# Platform/editor noise
+.DS_Store
+Thumbs.db

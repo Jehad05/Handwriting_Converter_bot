@@ -1,0 +1,29 @@
+Offline verification record
+Date: 2026-10-02
+Python: 3.12.3
+OS: Ubuntu 24.04.4 LTS
+
+Full suite:
+  Command: python3 -m unittest discover -s tests -v
+  Result: Ran 43 tests; OK (1.292 seconds)
+  Distribution from the verbose run:
+    test_delivery.py: 10
+    test_limits.py: 12
+    test_main.py: 8
+    test_outbound.py: 11
+    test_pdf.py: 2
+
+Coverage notes:
+  - Delivery/session, private-only behavior, 15-message/title boundary, 30-minute idle expiry, quota reservations, 429 pacing/retries, and suppression of automatic resend after ambiguous PDF delivery.
+  - SQLite permissions: the app data directory is 0700 and database/WAL/SHM files are 0600.
+  - An unsafe custom DB_PATH under shared /tmp raises PermissionError before creating the database; the test confirms /tmp mode and sticky bit remain unchanged.
+  - Reservation heartbeat renews every five minutes; a stale reservation is recovered only after more than two hours without a heartbeat. The default daily quota is 3 per user and resets at 02:00 UTC.
+
+Local benchmark reference:
+  benchmark-results.json records a converter-only 61,440-message-character payload. After sanitation and separators the converter input was 61,141 characters; conversion took 2.2682 seconds and produced a 78,125-byte, 23-page PDF. This is one development-computer measurement, not a hosting or production-performance guarantee. PERFORMANCE-ADDENDUM.md contains separate repeated Arabic-dominant and mixed-corpus runs; their times/page counts are distinct experiments, not replacements for this single-run record.
+
+Additional checks:
+  python3 -m compileall -q .  -> passed
+  python3 -m pip check         -> No broken requirements found
+
+No bot process was started, no real token was used, no live Telegram endpoint was contacted, and no hosting deployment was tested. The suite uses temporary SQLite databases, fake clocks, and mocked local delivery. A two-user end-to-end test and verification of Arabic-font availability/PDF rendering on the target host remain deployment gates. Drafts are in memory and are lost on restart; run one process per token. The limiter is process-local and quota coordination is limited to the same local SQLite database. Telegram send and SQLite commit are not atomic. Normal cleanup removes temporary PDFs, but a forced process kill can leave a temporary file behind.
